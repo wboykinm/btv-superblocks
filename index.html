@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.21.0/mapbox-gl.css' rel='stylesheet' />
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/readable/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+        #content {
+          position:absolute;
+          left:0;
+          right:0;
+          min-height:50px;
+          bottom:0;
+          background:RGBA(255,255,255, 0.9);
+          border-top: 2px solid #333;
+        }
+          .sidecontainer {
+          padding:20px;
+        }
+    </style>
+</head>
+<body>
+
+<div id='map'></div>
+<div id='content'>
+  <div class="sidecontainer">
+    <div class="row">
+      <div class="col-md-10"><h2>Superblocks: Central Burlington, VT</h2></div>
+      <div class="col-md-2"><a class="btn btn-primary btn-lg" target="_blank" href="http://www.vox.com/2016/8/4/12342806/barcelona-superblocks">Learn more</a></div>
+    </div>    
+  </div>
+</div>
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.21.0/mapbox-gl.js'></script>
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoibGFuZHBsYW5uZXIiLCJhIjoicUtlZGgwYyJ9.UFYz8MD4lI4kIzk9bjGFvg';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/landplanner/cirqe4a8b002cgannauu3duzs',
+    center: [-73.2141, 44.4757],
+    zoom: 15,
+    bearing: 80,
+    pitch: 40
+  });
+  map.addControl(new mapboxgl.Navigation());
+</script>
+
+</body>
+</html>
